@@ -12,21 +12,6 @@ function zZz (options) {
   	elementName = elementName.toLowerCase();
     var e = jQuery("<"+elementName+" />");	
 
-  	e.id = function (id) {
-     return this.attr('id', id); 
-    }
-
-    e.autoid = function () {
-      if (!this.id()) {
-        this.id('z_auto_id_' + ZAutoId++);  
-      } 
-      return this;
-    };
-
-    e.elem = function () { 
-      return this[0]; 
-    }
-
   	return e;
   } 
   options.target.Z = Z;
@@ -46,3 +31,19 @@ function zZz (options) {
   
   return options.target;  
 }
+
+jQuery.prototype.id = function (id) {
+ return this.attr('id', id); 
+}
+
+jQuery.prototype.autoid = function () {
+  if (!this.id()) {
+    this.id('z_auto_id_' + ZAutoId++);  
+  } 
+  return this;
+};
+
+jQuery.prototype.elem = function () { 
+  return this[0]; 
+}
+
