@@ -1,0 +1,9 @@
+{
+  name: 'z',
+  version: '0.1.1',
+  licence: 'licence.txt',
+
+  javascripts: {
+    spec: ['env/jasmine.js', 'env/jasmine-html.js', '*']
+  }
+}
